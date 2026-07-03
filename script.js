@@ -173,7 +173,7 @@ function sendAnswer(){
 
 finishBtn.addEventListener("click",()=>{
 
-    sendAnswer();
+    sendEmail(selectedFood);
 
 });
 
