@@ -1,11 +1,15 @@
 const screens = document.querySelectorAll(".screen");
 
 function showScreen(id){
-    screens.forEach(screen=>screen.classList.remove("active"));
+    screens.forEach(screen=>{
+        screen.classList.remove("active");
+    });
+
     document.getElementById(id).classList.add("active");
 }
 
 const continueBtn=document.getElementById("continueBtn");
+const questionBtn=document.getElementById("questionBtn");
 const yesBtn=document.getElementById("yesBtn");
 const noBtn=document.getElementById("noBtn");
 const foodBtn=document.getElementById("foodBtn");
@@ -14,97 +18,165 @@ const finishBtn=document.getElementById("finishBtn");
 
 let selectedFood="";
 
-continueBtn.onclick=()=>{
+continueBtn.addEventListener("click",()=>{
+
     showScreen("screen2");
-}
 
-yesBtn.onclick=()=>{
+});
+
+questionBtn.addEventListener("click",()=>{
+
     showScreen("screen3");
-}
 
-foodBtn.onclick=()=>{
+});
+
+yesBtn.addEventListener("click",()=>{
+
     showScreen("screen4");
-}
+
+});
+
+foodBtn.addEventListener("click",()=>{
+
+    showScreen("screen5");
+
+});
 
 document.querySelectorAll(".food-card").forEach(card=>{
 
-card.onclick=()=>{
+    card.addEventListener("click",()=>{
 
-document.querySelectorAll(".food-card")
-.forEach(c=>c.classList.remove("selected"));
+        document.querySelectorAll(".food-card").forEach(item=>{
 
-card.classList.add("selected");
+            item.classList.remove("selected");
 
-selectedFood=card.dataset.food;
+        });
 
-}
+        card.classList.add("selected");
+
+        selectedFood=card.dataset.food;
+
+    });
 
 });
 
-nextBtn.onclick=()=>{
+nextBtn.addEventListener("click",()=>{
 
-if(selectedFood===""){
+    if(selectedFood===""){
 
-alert("Please choose one option 😊");
+        alert("Please choose one option 😊");
 
-return;
+        return;
 
-}
+    }
 
-showScreen("screen5");
+    showScreen("screen6");
 
-}
+});
 
-finishBtn.onclick=()=>{
+finishBtn.addEventListener("click",()=>{
 
-showScreen("screen6");
+    showScreen("screen7");
 
-// EmailJS добавим позже
+    // EmailJS отправку подключим позже
 
-}
+});
 
-let messages=[
+const noMessages=[
+
 "No 😅",
+
 "Really?",
+
 "Think again...",
+
 "Come on...",
-"Last chance..."
+
+"Last chance 😏"
+
 ];
 
-let index=0;
+let noIndex=0;
 
-function moveButton(){
+function moveNoButton(){
 
-const maxX=window.innerWidth-160;
+    const padding=20;
 
-const maxY=window.innerHeight-80;
+    const maxX=window.innerWidth-noBtn.offsetWidth-padding;
 
-noBtn.style.position="fixed";
+    const maxY=window.innerHeight-noBtn.offsetHeight-padding;
 
-noBtn.style.left=Math.random()*maxX+"px";
+    noBtn.style.position="fixed";
 
-noBtn.style.top=Math.random()*maxY+"px";
+    noBtn.style.left=Math.random()*maxX+"px";
 
-if(index<messages.length){
+    noBtn.style.top=Math.random()*maxY+"px";
 
-noBtn.innerText=messages[index];
+    if(noIndex<noMessages.length){
 
-index++;
+        noBtn.textContent=noMessages[noIndex];
 
-}else{
+        noIndex++;
 
-noBtn.style.display="none";
+    }else{
+
+        noBtn.style.display="none";
+
+    }
 
 }
+noBtn.addEventListener("mouseover",moveNoButton);
 
-}
+noBtn.addEventListener("touchstart",(e)=>{
 
-noBtn.addEventListener("touchstart",e=>{
+    e.preventDefault();
 
-e.preventDefault();
-
-moveButton();
+    moveNoButton();
 
 });
 
-noBtn.addEventListener("mouseover",moveButton);
+window.addEventListener("resize",()=>{
+
+    if(noBtn.style.position==="fixed"){
+
+        moveNoButton();
+
+    }
+
+});
+
+// ---------- EmailJS placeholder ----------
+
+function sendAnswer(){
+
+    console.log({
+
+        answer:"YES",
+
+        food:selectedFood,
+
+        date:new Date().toLocaleString(),
+
+        userAgent:navigator.userAgent
+
+    });
+
+    /*
+    Здесь позже подключим EmailJS:
+
+    emailjs.send(...)
+
+    */
+}
+
+// Отправка после открытия последнего экрана
+
+finishBtn.addEventListener("click",()=>{
+
+    sendAnswer();
+
+});
+
+// Показываем первый экран при загрузке
+
+showScreen("screen1");
