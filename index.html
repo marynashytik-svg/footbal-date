@@ -3,20 +3,314 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Game Night ⚽</title>
 
-<link rel="stylesheet" href="style.css">
+<title>Match Invitation</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
 
 </head>
 
 <body>
 
-<div id="app"></div>
+<div id="background"></div>
+
+<!-- SCREEN 1 -->
+
+<section id="screen1" class="screen active">
+
+<div class="glass">
+
+<h4>MATCH INVITATION</h4>
+
+<h1>Reserved for</h1>
+
+<h2>Antoine ⚽</h2>
+
+<p>
+Tonight's match
+</p>
+
+<button id="continueBtn">
+ENTER STADIUM
+</button>
+
+</div>
+
+</section>
+
+<!-- SCREEN 2 -->
+
+<section id="screen2" class="screen">
+
+<div class="glass">
+
+<h1>🇨🇴 Colombia</h1>
+
+<h2>vs</h2>
+
+<h1>🇬🇭 Ghana</h1>
+
+<div class="kickoff">
+
+Kick-off
+
+<h2>03:30</h2>
+
+</div>
+
+<button id="questionBtn">
+
+Continue →
+
+</button>
+
+</div>
+
+</section>
+
+<!-- SCREEN 3 -->
+
+<section id="screen3" class="screen">
+
+<div class="glass">
+
+<h2>
+
+Hey Antoine ❤️
+
+</h2>
+
+<p>
+
+Before the match starts...
+
+</p>
+
+<h1>
+
+Would you like to watch
+
+Colombia's game
+
+with me tonight?
+
+</h1>
+
+<div class="buttons">
+
+<button
+class="yes"
+id="yesBtn">
+
+YES, I'D LOVE TO
+
+</button>
+
+<button
+class="no"
+id="noBtn">
+
+NO
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- SCREEN 4 -->
+
+<section
+id="screen4"
+class="screen">
+
+<div class="glass">
+
+<h1 class="goal">
+
+⚽ GOOOOAAAL!!
+
+</h1>
+
+<p>
+
+Invitation accepted.
+
+</p>
+
+<button id="foodBtn">
+
+Continue →
+
+</button>
+
+</div>
+
+</section>
+
+<!-- SCREEN 5 -->
+
+<section
+id="screen5"
+class="screen">
+
+<div class="glass">
+
+<h2>
+
+What should we have
+
+for the game?
+
+</h2>
+
+<div class="food-grid">
+
+<div
+class="food-card"
+data-food="Home-cooked meal">
+
+🏠
+
+<h3>
+
+Home-cooked meal
+
+</h3>
+
+</div>
+
+<div
+class="food-card"
+data-food="Order delivery">
+
+🛵
+
+<h3>
+
+Order delivery
+
+</h3>
+
+</div>
+
+<div
+class="food-card"
+data-food="Light snacks">
+
+🥨
+
+<h3>
+
+Light snacks
+
+</h3>
+
+</div>
+
+</div>
+
+<button id="nextBtn">
+
+Continue →
+
+</button>
+
+</div>
+
+</section>
+<!-- SCREEN 6 -->
+
+<section
+id="screen6"
+class="screen">
+
+<div class="glass">
+
+<h2>
+
+Perfect ⚽
+
+</h2>
+
+<p>
+
+Kick-off starts at
+
+<strong>03:30</strong>
+
+</p>
+
+<p>
+
+Ready for tonight?
+
+</p>
+
+<button id="finishBtn">
+
+Reveal meeting point 📍
+
+</button>
+
+</div>
+
+</section>
+
+<!-- SCREEN 7 -->
+
+<section
+id="screen7"
+class="screen">
+
+<div class="glass">
+
+<h1>
+
+GAME NIGHT
+
+</h1>
+
+<h2>
+
+🇨🇴❤️
+
+</h2>
+
+<p>
+
+See you at
+
+</p>
+
+<h3>
+
+Calle Alcalde José Luis Lassaleta 17
+
+</h3>
+
+<p>
+
+Can't wait to watch the game with you ⚽
+
+</p>
+
+</div>
+
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
 <script src="script.js"></script>
+
+<script src="email.js"></script>
 
 </body>
 </html>
