@@ -349,17 +349,14 @@ food=card.dataset.food;
 
 });
 
-next.onclick=()=>{
+document.getElementById("next").onclick = () => {
 
-if(food===""){
+    if (food === "") {
+        alert("Please choose something for the game 😊");
+        return;
+    }
 
-alert("Please choose something for the game 😊");
-
-return;
-
-}
-
-show("s5");
+    show("s5");
 
 };
 
