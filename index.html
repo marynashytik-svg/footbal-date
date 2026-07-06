@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Match Invitation</title>
+
+<title>For Antoine ❤️</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
+
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
 
@@ -20,56 +24,68 @@ font-family:'Poppins',sans-serif;
 }
 
 body{
-background:#08131f;
-color:#fff;
-overflow:hidden;
+
+background:linear-gradient(180deg,#08131f,#101826,#1d2533);
+
+color:white;
+
 height:100vh;
+
+overflow:hidden;
+
 display:flex;
+
 justify-content:center;
+
 align-items:center;
+
 }
 
-body::before{
+body:before{
+
 content:"";
+
 position:fixed;
+
 inset:0;
+
 background:
-linear-gradient(rgba(5,15,25,.82),rgba(5,15,25,.92)),
-url("https://images.unsplash.com/photo-1508098682722-e99c643e7485?auto=format&fit=crop&w=1500&q=80");
-background-size:cover;
-background-position:center;
-z-index:-2;
+
+radial-gradient(circle at top,rgba(255,255,255,.08),transparent 60%);
+
+pointer-events:none;
+
 }
 
 .card{
 
-width:min(420px,92vw);
+width:min(430px,92vw);
+
+padding:40px 30px;
+
+border-radius:28px;
 
 background:rgba(255,255,255,.08);
 
 backdrop-filter:blur(18px);
 
-border-radius:30px;
+border:1px solid rgba(255,255,255,.12);
 
-padding:34px;
+box-shadow:0 20px 60px rgba(0,0,0,.45);
 
 text-align:center;
 
-box-shadow:0 25px 60px rgba(0,0,0,.45);
-
-border:1px solid rgba(255,255,255,.15);
-
 }
 
-.screen{
+.slide{
 
 display:none;
 
-animation:fade .5s;
+animation:fade .8s;
 
 }
 
-.screen.active{
+.slide.active{
 
 display:block;
 
@@ -79,91 +95,49 @@ h1{
 
 font-size:34px;
 
-margin:15px 0;
+font-weight:600;
 
-}
-
-h2{
-
-font-size:26px;
-
-margin:15px 0;
+margin-bottom:20px;
 
 }
 
 p{
 
-margin:18px 0;
+font-size:18px;
 
-line-height:1.6;
+line-height:1.8;
 
-opacity:.9;
+opacity:.92;
 
 }
 
 button{
 
+margin-top:35px;
+
 width:100%;
 
-padding:18px;
-
-margin-top:18px;
+padding:17px;
 
 border:none;
 
-border-radius:18px;
+border-radius:16px;
+
+background:#ffd54f;
 
 font-size:18px;
 
-font-weight:700;
+font-weight:600;
 
 cursor:pointer;
 
-transition:.25s;
+transition:.3s;
 
 }
 
-.primary{
+button:hover{
 
-background:#ffd400;
-
-color:#111;
-
-}
-
-.secondary{
-
-background:white;
-
-color:#111;
-
-position:relative;
-
-}
-
-.food{
-
-margin-top:18px;
-
-padding:18px;
-
-border-radius:18px;
-
-background:rgba(255,255,255,.08);
-
-cursor:pointer;
-
-border:2px solid transparent;
-
-transition:.25s;
-
-}
-
-.food.selected{
-
-border-color:#ffd400;
-
-background:rgba(255,212,0,.2);
+transform:scale(1.03);
 
 }
 
@@ -187,6 +161,26 @@ transform:translateY(0);
 
 }
 
+.heart{
+
+font-size:60px;
+
+margin-bottom:20px;
+
+animation:pulse 1.6s infinite;
+
+}
+
+@keyframes pulse{
+
+50%{
+
+transform:scale(1.08);
+
+}
+
+}
+
 </style>
 
 </head>
@@ -195,121 +189,351 @@ transform:translateY(0);
 
 <div class="card">
 
-<div id="s1" class="screen active">
+<div class="slide active">
 
-<h2>🏟 MATCH INVITATION</h2>
+<div class="heart">❄️</div>
 
-<h1>Reserved for Antoine ⚽</h1>
+<h1>Hi Antoine</h1>
 
 <p>
 
-Tonight's match
+There is something
+
+I would like to tell you.
+
+</p>
+
+<button onclick="next()">
+
+Continue
+
+</button>
+
+</div>
+
+<div class="slide">
+
+<p>
+
+A few weeks ago,
+
+I told you that
+
+something was missing.
+
+</p>
+
+<button onclick="next()">
+
+Continue
+
+</button>
+
+</div>
+
+<div class="slide">
+
+<p>
+
+Not because of you...
 
 <br><br>
 
-🇨🇴 Colombia
+But because
 
-vs
+I couldn't feel
 
-🇬🇭 Ghana
+the deep connection
 
-</p>
-
-<p>
-
-Kick-off
-
-<strong>03:30</strong>
+I was hoping for.
 
 </p>
 
-<button id="enter" class="primary">
+<button onclick="next()">
 
-ENTER STADIUM
-
-</button>
-
-</div>
-
-  <div id="s2" class="screen">
-
-<h2>Hey Antoine ❤️</h2>
-
-<p>
-Before the match starts...
-</p>
-
-<h1>
-Would you like to watch
-Colombia's game
-with me tonight?
-</h1>
-
-<button id="yes" class="primary">
-YES, I'D LOVE TO
-</button>
-
-<button id="no" class="secondary">
-NO
-</button>
-
-</div>
-
-<div id="s3" class="screen">
-
-<h1>⚽ GOOOOAAAL!!</h1>
-
-<p>
-I knew you'd say yes 😄
-</p>
-
-<button id="continueFood" class="primary">
 Continue
+
 </button>
 
 </div>
+<div class="slide">
 
-<div id="s4" class="screen">
+<p>
 
-<h2>
-What should we have
-for the game?
-</h2>
+Then we spent this weekend together.
 
-<div class="food" data-food="Home-cooked meal">
-🏠 Home-cooked meal
-</div>
+<br><br>
 
-<div class="food" data-food="Order delivery">
-🛵 Order delivery
-</div>
+And something changed.
 
-<div class="food" data-food="Light snacks">
-🥨 Light snacks
-</div>
+</p>
 
-<button id="next" class="primary">
+<button onclick="next()">
+
 Continue
+
 </button>
 
 </div>
 
-<div id="s5" class="screen">
-
-<h1>GAME NIGHT ⚽</h1>
+<div class="slide">
 
 <p>
-See you at
+
+For the first time,
+
+I felt the connection
+
+I had been missing.
+
+<br><br>
+
+I felt comfortable.
+
+<br>
+
+I felt calm.
+
+<br>
+
+I felt safe.
+
 </p>
 
-<h2>
-📍
-Calle Alcalde José Luis Lassaleta 17
-</h2>
+<button onclick="next()">
+
+Continue
+
+</button>
+
+</div>
+
+<div class="slide">
 
 <p>
-Can't wait to watch the match together ❤️
+
+For the first time,
+
+I felt like
+
+I could truly
+
+let you in.
+
 </p>
+
+<button onclick="next()">
+
+Continue
+
+</button>
+
+</div>
+
+<div class="slide">
+
+<div class="heart">🧊</div>
+
+<p>
+
+For a long time,
+
+my heart
+
+felt surrounded by ice.
+
+<br><br>
+
+I got so used
+
+to protecting it
+
+that I almost forgot
+
+what warmth felt like.
+
+</p>
+
+<button onclick="next()">
+
+Continue
+
+</button>
+
+</div>
+
+<div class="slide">
+
+<div class="heart">✨</div>
+
+<p>
+
+But somehow...
+
+<br><br>
+
+without even trying...
+
+<br><br>
+
+you've started
+
+melting that ice.
+
+</p>
+
+<button onclick="next()">
+
+Continue
+
+</button>
+
+</div>
+<div class="slide">
+
+<p>
+
+Little by little...
+
+<br><br>
+
+Conversation after conversation.
+
+<br>
+
+Smile after smile.
+
+<br>
+
+Moment after moment.
+
+</p>
+
+<button onclick="next()">
+
+Continue
+
+</button>
+
+</div>
+
+<div class="slide">
+
+<p>
+
+You didn't force
+
+your way into my heart.
+
+<br><br>
+
+You simply made it
+
+feel safe enough
+
+to open.
+
+</p>
+
+<button onclick="next()">
+
+Continue
+
+</button>
+
+</div>
+
+<div class="slide">
+
+<p>
+
+I don't know
+
+where this journey
+
+will take us.
+
+<br><br>
+
+And I don't need
+
+to know yet.
+
+</p>
+
+<button onclick="next()">
+
+Continue
+
+</button>
+
+</div>
+
+<div class="slide">
+
+<p>
+
+What I do know is...
+
+<br><br>
+
+These past few days
+
+have meant
+
+more to me
+
+than I can fully
+
+put into words.
+
+</p>
+
+<button onclick="next()">
+
+Continue
+
+</button>
+
+</div>
+
+<div class="slide">
+
+<p>
+
+I'm really happy
+
+that our paths crossed.
+
+<br><br>
+
+And I'm grateful
+
+that you're becoming
+
+someone
+
+I can feel
+
+close to.
+
+</p>
+
+<button onclick="next()">
+
+Continue
+
+</button>
+
+</div>
+
+<div class="slide">
+
+<div class="heart">❤️</div>
+
+<h1>Te quiero.</h1>
+
+
 
 </div>
 
@@ -317,104 +541,23 @@ Can't wait to watch the match together ❤️
 
 <script>
 
-const screens=document.querySelectorAll(".screen");
+const slides=document.querySelectorAll(".slide");
 
-function show(id){
+let current=0;
 
-screens.forEach(s=>s.classList.remove("active"));
+function next(){
 
-document.getElementById(id).classList.add("active");
+slides[current].classList.remove("active");
 
-}
+current++;
 
-document.getElementById("enter").onclick=()=>show("s2");
+if(current<slides.length){
 
-document.getElementById("yes").onclick = () => show("s3");
-
-document.getElementById("continueFood").onclick = () => show("s4");
-
-let food="";
-
-  document.querySelectorAll(".food").forEach(card=>{
-
-card.onclick=()=>{
-
-document.querySelectorAll(".food").forEach(c=>c.classList.remove("selected"));
-
-card.classList.add("selected");
-
-food=card.dataset.food;
-
-}
-
-});
-
-document.getElementById("next").onclick = () => {
-
-    if (food === "") {
-        alert("Please choose something for the game 😊");
-        return;
-    }
-
-    show("s5");
-
-};
-
-const noMessages=[
-
-"No 😅",
-
-"Really?",
-
-"Think again...",
-
-"Come on...",
-
-"Last chance 😏"
-
-];
-
-let index=0;
-
-function moveButton(){
-
-const btn=document.getElementById("no");
-
-const x=Math.random()*(window.innerWidth-btn.offsetWidth-20);
-
-const y=Math.random()*(window.innerHeight-btn.offsetHeight-20);
-
-btn.style.position="fixed";
-
-btn.style.left=x+"px";
-
-btn.style.top=y+"px";
-
-if(index<noMessages.length){
-
-btn.innerText=noMessages[index];
-
-index++;
-
-}else{
-
-btn.style.display="none";
+slides[current].classList.add("active");
 
 }
 
 }
-
-const no=document.getElementById("no");
-
-no.addEventListener("mouseover",moveButton);
-
-no.addEventListener("touchstart",(e)=>{
-
-e.preventDefault();
-
-moveButton();
-
-});
 
 </script>
 
