@@ -15,168 +15,155 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
-
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
 }
 
 body{
-
-background:linear-gradient(180deg,#08131f,#101826,#1d2533);
-
-color:white;
-
-height:100vh;
-
-overflow:hidden;
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
+    background:linear-gradient(180deg,#F8F2EC 0%,#EEDFD2 45%,#D98A8A 100%);
+    color:#5B3535;
+    height:100vh;
+    overflow:hidden;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    position:relative;
 }
 
-body:before{
-
-content:"";
-
-position:fixed;
-
-inset:0;
-
-background:
-
-radial-gradient(circle at top,rgba(255,255,255,.08),transparent 60%);
-
-pointer-events:none;
-
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:
+        radial-gradient(circle at top,
+        rgba(255,255,255,.5),
+        transparent 60%);
+    pointer-events:none;
 }
 
 .card{
-
-width:min(430px,92vw);
-
-padding:40px 30px;
-
-border-radius:28px;
-
-background:rgba(255,255,255,.08);
-
-backdrop-filter:blur(18px);
-
-border:1px solid rgba(255,255,255,.12);
-
-box-shadow:0 20px 60px rgba(0,0,0,.45);
-
-text-align:center;
-
+    width:min(430px,92vw);
+    padding:40px 30px;
+    border-radius:30px;
+    background:rgba(255,250,247,.75);
+    backdrop-filter:blur(18px);
+    border:1px solid rgba(255,255,255,.7);
+    box-shadow:0 20px 60px rgba(129,66,66,.18);
+    text-align:center;
 }
 
 .slide{
-
-display:none;
-
-animation:fade .8s;
-
+    display:none;
+    animation:fade .8s;
 }
 
 .slide.active{
-
-display:block;
-
+    display:block;
 }
 
 h1{
+    font-size:34px;
+    font-weight:600;
+    margin-bottom:18px;
+    color:#8C3B46;
+}
 
-font-size:34px;
-
-font-weight:600;
-
-margin-bottom:20px;
-
+h2{
+    font-size:28px;
+    font-weight:500;
+    margin-bottom:20px;
+    color:#8C3B46;
 }
 
 p{
-
-font-size:18px;
-
-line-height:1.8;
-
-opacity:.92;
-
+    font-size:18px;
+    line-height:1.9;
+    color:#5F4545;
 }
 
 button{
-
-margin-top:35px;
-
-width:100%;
-
-padding:17px;
-
-border:none;
-
-border-radius:16px;
-
-background:#ffd54f;
-
-font-size:18px;
-
-font-weight:600;
-
-cursor:pointer;
-
-transition:.3s;
-
+    width:100%;
+    margin-top:35px;
+    padding:17px;
+    border:none;
+    border-radius:18px;
+    background:#B84E5B;
+    color:white;
+    font-size:18px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s ease;
+    box-shadow:0 10px 25px rgba(184,78,91,.25);
 }
 
 button:hover{
+    background:#A64350;
+    transform:translateY(-2px);
+}
 
-transform:scale(1.03);
+button:active{
+    transform:scale(.98);
+}
+
+.heart{
+    font-size:64px;
+    margin-bottom:20px;
+    animation:pulse 1.8s infinite;
+}
+
+@keyframes pulse{
+
+0%{
+transform:scale(1);
+}
+
+50%{
+transform:scale(1.08);
+}
+
+100%{
+transform:scale(1);
+}
 
 }
 
 @keyframes fade{
 
 from{
-
 opacity:0;
-
-transform:translateY(20px);
-
+transform:translateY(25px);
 }
 
 to{
-
 opacity:1;
-
 transform:translateY(0);
-
 }
 
 }
 
-.heart{
+@media(max-width:480px){
 
-font-size:60px;
-
-margin-bottom:20px;
-
-animation:pulse 1.6s infinite;
-
+.card{
+    padding:30px 24px;
 }
 
-@keyframes pulse{
+h1{
+    font-size:28px;
+}
 
-50%{
+h2{
+    font-size:24px;
+}
 
-transform:scale(1.08);
+p{
+    font-size:17px;
+}
 
+button{
+    font-size:17px;
 }
 
 }
@@ -193,7 +180,7 @@ transform:scale(1.08);
 
 <div class="heart">❄️</div>
 
-<h1>Hi Antoine</h1>
+<h1>For Antoine </h1>
 
 <p>
 
@@ -219,7 +206,8 @@ A few weeks ago,
 
 I told you that
 
-something was missing.
+I don't feel connection which I need 
+to be more close to you...
 
 </p>
 
@@ -235,32 +223,7 @@ Continue
 
 <p>
 
-Not because of you...
-
-<br><br>
-
-But because
-
-I couldn't feel
-
-the deep connection
-
-I was hoping for.
-
-</p>
-
-<button onclick="next()">
-
-Continue
-
-</button>
-
-</div>
-<div class="slide">
-
-<p>
-
-Then we spent this weekend together.
+We spent this weekend together.
 
 <br><br>
 
@@ -370,12 +333,6 @@ Continue
 
 But somehow...
 
-<br><br>
-
-without even trying...
-
-<br><br>
-
 you've started
 
 melting that ice.
@@ -395,18 +352,6 @@ Continue
 
 Little by little...
 
-<br><br>
-
-Conversation after conversation.
-
-<br>
-
-Smile after smile.
-
-<br>
-
-Moment after moment.
-
 </p>
 
 <button onclick="next()">
@@ -420,12 +365,6 @@ Continue
 <div class="slide">
 
 <p>
-
-You didn't force
-
-your way into my heart.
-
-<br><br>
 
 You simply made it
 
